@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Legal Case Management</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="site-logo">Legal Case</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#welcome" class="nav-link active">Home</a></li>
+                    <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                    <li><a href="#data-management" class="nav-link">Manage Data</a></li>
+                    <li><a href="#reports-search" class="nav-link">Reports & Search</a></li>
+                    <li><a href="#insights-analysis" class="nav-link">Insights & Analysis</a></li>
+                    <li><a href="#about-us" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-bg"></div>
+        <div class="welcome-overlay">
+            <div class="container welcome-content">
+                <h1>LEGAL CASE MANAGEMENT SYSTEM</h1>
+                <p>Streamlining legal operations with efficiency and precision. Empowering justice through technology.</p>
+                <a href="#data-management" class="btn btn-gold">Start Managing Cases</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <h2 class="section-heading">Key Insights & Statistics</h2>
+            <p class="section-description">A quick overview of your legal practice's performance.</p>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Total Clients</h3>
+                    <p id="totalClients">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Active Cases</h3>
+                    <p id="activeCases">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Expert Lawyers</h3>
+                    <p id="totalLawyers">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Cases Won</h3>
+                    <p id="casesWon">0%</p>
+                </div>
+            </div>
+
+            <div class="case-summary-chart-container">
+                <h3 class="chart-heading">Case Status Overview</h3>
+                <div class="chart-wrapper">
+                    <canvas id="caseStatusChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data-management" class="data-management-section">
+        <div class="container">
+            <h2 class="section-heading">Manage Legal Data</h2>
+            <p class="section-description">Select a category to view and manage its records.</p>
+
+            <div class="data-management-grid">
+                <div class="data-card clickable-card" data-table-type="client">
+                    <i class="fas fa-users"></i>
+                    <h2>Client Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="client">View/Manage</button>
+                </div>
+
+                <div class="data-card clickable-card" data-table-type="lawyer">
+                    <i class="fas fa-user-tie"></i>
+                    <h2>Lawyer Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="lawyer">View/Manage</button>
+                </div>
+
+                <div class="data-card clickable-card" data-table-type="case">
+                    <i class="fas fa-gavel"></i>
+                    <h2>Case Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="case">View/Manage</button>
+                </div>
+
+                <div class="data-card clickable-card" data-table-type="hearing">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Hearing Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="hearing">View/Manage</button>
+                </div>
+
+                <div class="data-card clickable-card" data-table-type="witness">
+                    <i class="fas fa-person-booth"></i>
+                    <h2>Witness Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="witness">View/Manage</button>
+                </div>
+
+                <div class="data-card clickable-card" data-table-type="evidence">
+                    <i class="fas fa-box-open"></i>
+                    <h2>Evidence Records</h2>
+                    <button class="btn btn-gold view-manage-btn" data-table-type="evidence">View/Manage</button>
+                </div>
+            </div>
+
+            <div id="dynamicDataTableDisplay" class="dynamic-table-display-area" style="display: none;">
+                <h3 class="dynamic-table-heading"></h3>
+
+                <div id="clientManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Client</h3>
+                        <form id="addClientForm">
+                            <input type="text" id="clientName" name="Name" placeholder="Client Name" required>
+                            <input type="email" id="clientEmail" name="Email" placeholder="Client Email">
+                            <input type="text" id="clientPhone" name="Phone" placeholder="Client Phone">
+                            <input type="text" id="clientAddress" name="Address" placeholder="Client Address">
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Client</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="clientTableContainer"></div>
+                </div>
+
+                <div id="lawyerManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Lawyer</h3>
+                        <form id="addLawyerForm">
+                            <input type="text" id="lawyerName" name="Name" placeholder="Lawyer Name" required>
+                            <input type="text" id="lawyerFirm" name="Firm" placeholder="Firm">
+                            <input type="text" id="lawyerSpecialization" name="Specialization" placeholder="Specialization">
+                            <input type="email" id="lawyerEmail" name="Email" placeholder="Lawyer Email">
+                            <input type="number" id="lawyerPhone" name="PhoneNumber" placeholder="Lawyer Phone">
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Lawyer</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="lawyerTableContainer"></div>
+                </div>
+
+                <div id="caseManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Case</h3>
+                        <form id="addCaseForm">
+                            <input type="text" id="caseType" name="CaseType" placeholder="Case Type" required>
+                            <select id="clientId" name="ClientID" required>
+                                <option value="">Select Client</option>
+                            </select>
+                            <select id="lawyerId" name="LawyerID" required>
+                                <option value="">Select Lawyer</option>
+                            </select>
+                            <select id="caseStatus" name="Status" required>
+                                <option value="">Select Status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Closed">Closed</option>
+                            </select>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Case</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="caseTableContainer"></div>
+                </div>
+
+                <div id="hearingManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Hearing</h3>
+                        <form id="addHearingForm">
+                            <select id="caseIdHearing" name="CaseID" required>
+                                <option value="">Select Case</option>
+                            </select>
+                            <input type="text" id="courtLocation" name="CourtLocation" placeholder="Court Location" required>
+                            <input type="date" id="hearingDate" name="HearingDate" required>
+                            <input type="time" id="hearingTime" name="HearingTime" required>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Hearing</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="hearingTableContainer"></div>
+                </div>
+
+                <div id="witnessManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Witness</h3>
+                        <form id="addWitnessForm">
+                            <input type="text" id="witnessName" name="Name" placeholder="Witness Name" required>
+                            <input type="text" id="witnessContact" name="Contact" placeholder="Witness Contact">
+                            <select id="caseIdWitness" name="CaseID" required>
+                                <option value="">Select Case</option>
+                            </select>
+                            <input type="text" id="witnessEvidenceID" name="EvidenceID" placeholder="Evidence ID (Optional)">
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Witness</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="witnessTableContainer"></div>
+                </div>
+
+                <div id="evidenceManagementArea" class="data-management-area" style="display: none;">
+                    <div class="form-container">
+                        <h3>Add New Evidence</h3>
+                        <form id="addEvidenceForm">
+                            <select id="caseIdEvidence" name="CaseID" required>
+                                <option value="">Select Case</option>
+                            </select>
+                            <input type="text" id="evidenceType" name="EvidenceType" placeholder="Evidence Type" required>
+                            <input type="text" id="evidenceDescription" name="Description" placeholder="Description">
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Add Evidence</button>
+                                <button type="button" class="btn btn-cancel cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-container" id="evidenceTableContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reports-search" class="reports-search-section">
+        <div class="container">
+            <h2 class="section-heading">Quick Reports & Search Tools</h2>
+            <p class="section-description">Find specific information quickly with these tools.</p>
+
+            <div class="reports-grid-horizontal">
+
+                <div class="search-tool-box">
+                    <h3>Search Cases</h3>
+                    <form id="searchCaseForm" class="search-form">
+                        <input type="text" id="searchCaseID" name="case_no" placeholder="Case ID">
+                        <select id="searchCaseStatus" name="status">
+                            <option value="">Case Status (All)</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                        <select id="searchCaseType" name="case_type">
+                            <option value="">Select Case Type (All)</option>
+                        </select>
+                        <button type="submit" class="btn btn-gold">Search</button>
+                    </form>
+                </div>
+
+                <div class="search-tool-box">
+                    <h3>Search Hearings</h3>
+                    <form id="searchHearingsForm" class="search-form">
+                        <select id="searchHearingCourtLocation" name="court_filter">
+                            <option value="">Select Court Location (All)</option>
+                            <option value="Karachi Court">Karachi Court</option>
+                            <option value="Lahore Court">Lahore Court</option>
+                            <option value="Islamabad Court">Islamabad Court</option>
+                        </select>
+                        <input type="date" id="searchHearingDate" name="hearing_date">
+                        <button type="submit" class="btn btn-gold">Filter</button>
+                    </form>
+                </div>
+
+                <div class="search-tool-box">
+                    <h3>Search Witnesses & Evidence</h3>
+                    <form id="searchCombinedForm" class="search-form">
+                        <input type="text" id="searchWitnessName" name="witness_name" placeholder="Witness Name">
+                        <select id="searchEvidenceType" name="evidence_type">
+                               <option value="">Select Evidence Type</option>
+                        </select>
+                        <button type="submit" class="btn btn-gold">Search All</button>
+                    </form>
+                </div>
+
+                <div class="search-tool-box">
+                    <h3>Search Lawyers</h3>
+                    <form id="searchLawyerForm" class="search-form">
+                        <input type="text" id="searchLawyerName" name="lawyer_name" placeholder="Lawyer Name (Optional)">
+                        <input type="text" id="searchLawyerFirm" name="lawyer_firm" placeholder="Firm (Optional)">
+                        <input type="text" id="searchLawyerSpecialization" name="lawyer_specialization" placeholder="Specialization (Optional)">
+                        <button type="submit" class="btn btn-gold">Search Lawyers</button>
+                    </form>
+                </div>
+
+                <div class="search-tool-box">
+                    <h3>Search Clients</h3>
+                    <form id="searchClientForm" class="search-form">
+                        <input type="text" id="searchClientName" name="client_name" placeholder="Client Name (Optional)">
+                        <input type="text" id="searchClientAddress" name="client_address" placeholder="Address (Optional)">
+                        <button type="submit" class="btn btn-gold">Search Clients</button>
+                    </form>
+                </div>
+
+            </div>
+            <div id="dynamicSearchResultsDisplay" class="dynamic-table-display-area" style="display: none;">
+                <h3 class="dynamic-table-heading">Search results will appear here.</h3>
+                <div id="currentSearchResultsTable" class="table-container">
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section id="insights-analysis" class="insights-analysis-section">
+    <div class="container">
+        <h2 class="section-heading">Advanced Insights & Analysis</h2>
+        <p class="section-description">Unlock deeper understanding of your legal data.</p>
+
+        <div class="insights-grid">
+            <div class="insights-card clickable-card" data-insight-type="top-lawyers">
+                <i class="fas fa-medal"></i>
+                <h3>Top Lawyers Overview</h3>
+                <p>Discover top-performing lawyers, their specializations, firms, and case load.</p>
+                <button class="btn btn-gold view-insight-btn" data-insight-type="top-lawyers">View Insights</button>
+            </div>
+
+            <div class="insights-card clickable-card" data-insight-type="unassigned-clients">
+                <i class="fas fa-user-times"></i>
+                <h3>Clients Without Lawyers</h3>
+                <p>Identify clients without an assigned lawyer and get lawyer recommendations.</p>
+                <button class="btn btn-gold view-insight-btn" data-insight-type="unassigned-clients">View Insights</button>
+            </div>
+
+            <div class="insights-card clickable-card" data-insight-type="recent-hearings">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Recent Hearing Details</h3>
+                <p>Explore recent hearings with associated case, lawyer, and firm information.</p>
+                <button class="btn btn-gold view-insight-btn" data-insight-type="recent-hearings">View Insights</button>
+            </div>
+
+            <div class="insights-card clickable-card" data-insight-type="all-records-view">
+                <i class="fas fa-database"></i>
+                <h3>Comprehensive Data View</h3>
+                <p>View a joined overview of all related records (Client, Case, Lawyer, Hearing, Witness, Evidence).</p>
+                <button class="btn btn-gold view-insight-btn" data-insight-type="all-records-view">View Insights</button>
+            </div>
+
+            <div class="insights-card clickable-card" data-insight-type="crime-increase-by-city">
+                <i class="fas fa-chart-line"></i>
+                <h3>City Case Dominance</h3>
+                <p>See which case type is most frequent in each city.</p>
+                <button class="btn btn-gold view-insight-btn" data-insight-type="crime-increase-by-city">View Insights</button>
+            </div>
+
+            </div> <div id="dynamicinsightResultsDisplay" class="dynamic-table-display-area" style="display: none;">
+            <h3 class="dynamic-table-heading">Search results will appear here.</h3>
+            <div id="currentinsightResultsTable" class="table-container">
+            </div>
+        </div>
+        </div>
+</section>
+
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <h2>Edit Record</h2>
+            <form id="editForm">
+                <div id="modalFormFields"></div>
+                <button type="submit" class="btn btn-gold">Save Changes</button>
+            </form>
+            <div id="editMessage" class="message-area"></div>
+        </div>
+    </div>
+
+    <section id="about-us" class="about-section">
+        <div class="container">
+            <h2 class="section-heading">About Our System</h2>
+            <p class="section-description">Dedicated to empowering legal professionals with cutting-edge tools and comprehensive data management solutions.</p>
+            <div class="about-content">
+                <p>Our Legal Case Management System is designed to simplify complex legal workflows, enhance collaboration, and provide actionable insights into your practice. From client intake to case closure, our platform offers a seamless experience, ensuring that critical information is always at your fingertips.</p>
+                <p>We believe in leveraging technology to promote efficiency, transparency, and accuracy within the legal field. Our commitment is to provide a robust, secure, and user-friendly system that grows with your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="contact-info-section" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+            <div class="contact-person" style="text-align: center; margin: 10px;">
+                <p>👤 <strong>Fatima Noor Ul Imran</strong></p>
+                <p>2023-BCS-033</p>
+            </div>
+            <div class="contact-person" style="text-align: center; margin: 10px;">
+                <p>👤 <strong>MARIHA MALIK</strong></p>
+                <p>2023-BCS-060</p>
+            </div>
+            <div class="contact-person" style="text-align: center; margin: 10px;">
+                <p>👤 <strong>MUNEEBA JAMIL</strong></p>
+                <p>2023-BCS-066</p>
+            </div>
+            <div class="contact-person" style="text-align: center; margin: 10px;">
+                <p>👤 <strong>RIDA TAHIR</strong></p>
+                <p>2023-BCS-072</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

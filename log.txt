@@ -1,0 +1,37 @@
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"id":"13","action":"update","Name":"Adv. Aitzaz Ahsan","Firm":"Ahsan Law Chambers","Specialization":"Human Rights","PhoneNumber":"03001234568","Email":"aitzaz@ahsanlaw.com"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"03251628339","action":"add"}
+POST: {"id":"11","action":"update","Name":"Adv. Babar Awan","Firm":"Awan & Associates","Specialization":"Constitutional","PhoneNumber":"03211234568","Email":"babar@awanassociates.com"}
+POST: {"Name":"Maham ali","Firm":"Awan & Associates","Specialization":"Corporate","Email":"alimaham@gmail.com","PhoneNumber":"37281934444","action":"add"}
+POST: {"Name":"Maham ali","Firm":"Awan & Associates","Specialization":"Corporate","Email":"alimaham@gmail.com","PhoneNumber":"37281934444","action":"add"}
+POST: {"Name":"Maham ali","Firm":"Awan & Associates","Specialization":"Corporate","Email":"alimaham@gmail.com","PhoneNumber":"37281934444","action":"add"}
+POST: {"Name":"Maham ali","Firm":"Awan & Associates","Specialization":"Corporate","Email":"alimaham@gmail.com","PhoneNumber":"37281934444","action":"add"}
+POST: {"id":"11","action":"update","Name":"Adv. Babar Awan","Firm":"Awan & Associates","Specialization":"Constitutional","Email":"babar@awanassociates.com","PhoneNumber":"03211234568"}
+POST: {"id":"11","action":"update","Name":"Adv. Babar Awan","Firm":"Awan & Associates","Specialization":"Constitutional","Email":"babar@awanassociates.com","PhoneNumber":"03211234567"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"id":"47","action":"update","Name":"Adv. Raja Ahmed Jamil","Firm":"Mehmood Legal Services","Specialization":"Criminal","Email":"tariq@mehmoodlegal.com","PhoneNumber":"03191234569"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.Maleeha ","Firm":"Awan & Associates","Specialization":"Corporate","Email":"najam@gmail.com","PhoneNumber":"37281934456","action":"add"}
+POST: {"Name":"Adv.janan","Firm":"Malik & Partners","Specialization":"Family","Email":"Janan@gmail.com","PhoneNumber":"03948529592","action":"add"}
+POST: {"id":"52","action":"update","Name":"Adv.Jaanan","Firm":"Malik & Partners","Specialization":"Family","Email":"Janan@gmail.com","PhoneNumber":"03948529592"}
+DELETE: {"id":"52","action":"delete"}
+POST: {"Name":"Adv. Nabiha Anmol","Firm":"Digital Rights Foundation","Specialization":"Cyber Crime","Email":"anmol@gmail.com","PhoneNumber":"0374891648","action":"add"}
